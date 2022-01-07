@@ -1,0 +1,13 @@
+<div class="banner">
+  <div class="logo-wrapper">
+    <label>Issue Tracker</label>
+  </div>
+  <div class="nav-wrapper">
+    <label class="nav-label" (click)="loadpage('login')">Login</label>
+    <label class="nav-label" (click)="loadpage('register')">Register</label>
+    <label class="nav-label" (click)="loadpage('viewissues')">View Issues</label>
+  </div>
+  <div class="actions-wrapper">
+    <button routerLink="/register" class="btn btn-danger mx-2">Logout</button>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    /* font-family: Arial, Helvetica, sans-serif; */
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* color pallets */
+
+:root{
+    --text-grey:#858d9d;
+    --text-grey-med:#6d7278;
+    --text-primary:#000;
+    --blue-primary:#003391;
+    --blue-normal:#0033a1;
+    --success:#6dd400;
+    --error:#e02020;
+}
+
+.success-text{
+  color:var(--success);
+}
+
+.error-text{
+  color:var(--error);
+}
+
+.card-title{
+    font-size: 1.56rem;
+    line-height:1.5;
+    color:var(--text-primary);
+}
+
+.btn-wide{
+    font-size: 1rem;
+    padding:.6em 1.5em;
+    
+    background: transparent;
+    border-color: var(--blue-primary);
+    border-width: .12em;
+    border-style: solid;
+
+    border-radius: 1.5em;
+
+    text-transform: uppercase;
+
+    color:var(--blue-primary);
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 3rem;
+  }
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    padding:0px 2px;
+    border-left:3rem solid transparent;
+    background-clip: content-box;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(215,215,215);
+    border-left: 2.3rem solid transparent;
+    border-right: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(145, 145, 145);
+  }

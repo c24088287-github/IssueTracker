@@ -1,0 +1,67 @@
+<div class="d-flex">
+  
+  <button (click) = "clickAddIssue()" type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal"> Issues</button>
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Add Issues</button>
+</div>
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Issue Id</th>
+            <th scope="col">Priority</th>
+            <th scope="col">Status</th>
+            <th scope="col">Description</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngForm="let row of issueData">
+            <td>{{row.id}}</td>
+            <td>{{row.priority}}</td>
+            <td>{{row.status}}</td>
+            <td>{{row.description}}</td>
+            
+            <td>
+                <button (click)="onEdit(row)" type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-info">Edit</button>
+                <button class="btn btn-danger mx-3" (click)="deleteIssues(row)">Delete</button>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Issues</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form >            
+            <div class="form-group">
+              <label for="exampleInputPassword1">Priority</label>
+              <input type="text" formControlName="priority" class="form-control" id="exampleInputPassword1" placeholder="Enter Severity">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Status</label>
+                <input type="text" formControlName="status" class="form-control" id="exampleInputPassword1" placeholder="Enter Status">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Descriprion</label>
+                <input type="text" formControlName="description" class="form-control" id="exampleInputPassword1" placeholder="Enter description">
+            </div>                      
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" *ngIf="showAdd()" (click)="postIssueDetails()">Add</button>
+        <button type="button" class="btn btn-primary" *ngIf="showUpdate()" (click)="updateIssueDetails()">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+

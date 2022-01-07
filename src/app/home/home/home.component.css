@@ -1,0 +1,88 @@
+.content-wrapper {
+  /* border:1px solid lime; */
+
+  padding: 2rem 4rem;
+}
+
+.content-card {
+  /* max-height: 80vh; */
+  height: 75vh;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 1em;
+
+  padding: 2.18em 2em 1em 2em;
+
+  box-shadow: 0em 0em 0.7em 0 rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+@media screen and (max-width: 550px) {
+  .content-card {
+    height: 75vh;
+    overflow: scroll;
+  }
+}
+
+
+
+/* <!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  --> */
+
+/* Login */
+.card{
+  
+  border: none;
+  width: 500px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background:hsla(205, 46%, 30%, 1);
+  background: linear-gradient(90deg, hsla(205, 46%, 30%, 1),hsla(260, 29%, 36%, 1)100%);
+}
+
+.card h1,h5{
+  color: #fff;
+}
+
+label {
+  color: #fff;
+}
+
+a{
+  color: #fff;
+  margin-top: 10px;
+}
+
+
+
+/* Register */
+.card{
+  
+  border: none;
+  width: 500px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background:hsla(205, 46%, 30%, 1);
+  background: linear-gradient(90deg, hsla(205, 46%, 30%, 1),hsla(260, 29%, 36%, 1)100%);
+}
+
+.card h1,h5{
+  color: #fff;
+}
+
+label {
+  color: #fff;
+}

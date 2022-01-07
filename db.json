@@ -1,0 +1,39 @@
+{
+  "issues": [
+    {
+      "id": 1,
+      "priority": "hello",
+      "status": "hello",
+      "description": "hello"
+    },
+    {
+      "id": 2,
+      "priority": "",
+      "status": "",
+      "description": ""
+    }    
+  ],
+  "registeredUsers": [
+    {
+      "firstname": "aaa",
+      "email": "aaa@gmail.com",
+      "password": "aaa",
+      "mobile": 9999,
+      "id": 1
+    },
+    {
+      "firstname": "abc",
+      "email": "abc",
+      "password": "1111",
+      "mobile": 1111,
+      "id": 2
+    },
+    {
+      "firstname": "vv",
+      "email": "vv",
+      "password": "vv",
+      "mobile": null,
+      "id": 3
+    }
+  ]
+}

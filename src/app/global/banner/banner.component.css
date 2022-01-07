@@ -1,0 +1,38 @@
+label{
+  font-weight: bold;
+}
+
+.banner {
+  padding: 0.5rem 3.5rem;
+  background-image: linear-gradient(94deg, #198b23, #25ad30);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-wrapper{
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-label{
+color: black;
+cursor: pointer;
+position: relative;
+margin-right: 4rem;
+}
+
+
+
+.actions-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.actions-wrapper img {
+  margin-right: 1em;
+}
+
+.Avatar {
+  height: 2rem;
+}
