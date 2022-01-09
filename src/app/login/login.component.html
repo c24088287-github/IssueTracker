@@ -4,28 +4,27 @@
             <div class="card">
                 <div class="text-center">
                     <h1>Login</h1>
-                    <h5>Please enter email nd psd!!</h5>
+                    <h5>Please enter email and password!!</h5>
                 </div>
                 <form [formGroup]="loginForm" (ngSubmit)="login()">
                     <!-- Goto bootstrap website ==> serch forms adn copy the login code snippet -->
-                    
-                        <div class="mb-3">
-                          <label for="exampleInputEmail1" class="form-label">Email address</label>
-                          <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">                          
-                        </div>
-                        <div class="mb-3">
-                          <label for="exampleInputPassword1" class="form-label">Password</label>
-                          <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
-                        </div>                
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                      
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input formControlName="password" type="password" class="form-control"
+                            id="exampleInputPassword1">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
                 </form>
-                <a routerLink="/home/register">New User? Click to Register</a>
-                
+                <a routerLink="/issuetracker/register">New User? Click to Register</a>
+
             </div>
         </div>
     </div>
-    
 </div>
-
-

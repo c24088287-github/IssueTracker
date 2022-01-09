@@ -5,18 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { ReactiveFormsModule ,FormsModule} from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { IssuesModule } from './issues/issues.module';
+import { AboutComponent } from './about/about.component';
+import { LoginAndRegisterComponent } from './login-and-register/login-and-register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AboutComponent,
+    LoginAndRegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -25,8 +30,9 @@ import { ReactiveFormsModule ,FormsModule} from '@angular/forms';
     HttpClientModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    FormsModule
-    
+    FormsModule,
+    IssuesModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

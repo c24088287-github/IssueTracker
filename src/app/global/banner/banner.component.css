@@ -4,7 +4,7 @@ label{
 
 .banner {
   padding: 0.5rem 3.5rem;
-  background-image: linear-gradient(94deg, #198b23, #25ad30);
+  background-image: linear-gradient(94deg, #000000, rgb(77, 37, 12));
   color: white;
   display: flex;
   justify-content: space-between;
@@ -16,7 +16,7 @@ label{
 }
 
 .nav-label{
-color: black;
+color: rgb(250, 250, 250);
 cursor: pointer;
 position: relative;
 margin-right: 4rem;

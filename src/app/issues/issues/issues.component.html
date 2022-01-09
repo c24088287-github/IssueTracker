@@ -1,37 +1,43 @@
-<div class="d-flex">
-  
-  <button (click) = "clickAddIssue()" type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal"> Issues</button>
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Add Issues</button>
-</div>
+<!-- Issues Landing Page ( List of all issues displayed) -->
+<div class="content-wrapper">
+  <div class="d-flex">
+    <button (click)="clickAddIssue()" type="button" class="btn btn-success" data-toggle="modal"
+      data-target="#exampleModal">Add Issues</button>
+  </div>
 
-<table class="table mt-3">
+  <!-- Table to populate issues -->
+  <table class="table mt-3">
     <thead>
-        <tr>
-            <th scope="col">Issue Id</th>
-            <th scope="col">Priority</th>
-            <th scope="col">Status</th>
-            <th scope="col">Description</th>
-            <th scope="col">Action</th>
-        </tr>
+      <tr>
+        <th scope="col">Issue Id</th>
+        <th scope="col">Severity</th>
+        <th scope="col">Status</th>
+        <th scope="col">Description</th>
+        <th scope="col">Action</th>
+      </tr>
     </thead>
     <tbody>
-        <tr *ngForm="let row of issueData">
-            <td>{{row.id}}</td>
-            <td>{{row.priority}}</td>
-            <td>{{row.status}}</td>
-            <td>{{row.description}}</td>
-            
-            <td>
-                <button (click)="onEdit(row)" type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-info">Edit</button>
-                <button class="btn btn-danger mx-3" (click)="deleteIssues(row)">Delete</button>
-            </td>
+      <tr *ngFor="let row of issueData">
+        <td>{{row.id}}</td>
+        <td>{{row.severity}}</td>
+        <td>{{row.status}}</td>
+        <td>{{row.description}}</td>
 
-        </tr>
+        <td>
+          <button (click)="onEdit(row)" type="button" data-toggle="modal" data-target="#exampleModal"
+            class="btn btn-info">Edit</button>
+          <button class="btn btn-danger mx-3" (click)="deleteIssues(row)">Delete</button>
+        </td>
+
+      </tr>
     </tbody>
-</table>
+  </table>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+</div>
+
+<!-- Modal dialog box to Add and Edit Template -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -40,28 +46,44 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      <!-- Severity -->
       <div class="modal-body">
-        <form >            
-            <div class="form-group">
-              <label for="exampleInputPassword1">Priority</label>
-              <input type="text" formControlName="priority" class="form-control" id="exampleInputPassword1" placeholder="Enter Severity">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Status</label>
-                <input type="text" formControlName="status" class="form-control" id="exampleInputPassword1" placeholder="Enter Status">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Descriprion</label>
-                <input type="text" formControlName="description" class="form-control" id="exampleInputPassword1" placeholder="Enter description">
-            </div>                      
+        <form [formGroup]="formValue">
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Severity : </label>
+            <!-- <input type="text" formControlName="severity" class="form-control" id="exampleInputPassword1"
+              placeholder="Enter Severity"> -->
+            <select class="form-control" id="exampleFormControlSelect1" formControlName="severity">
+              <option value="Minor">Minor</option>
+              <option value="Major">Major</option>
+              <option value="Critical">Critical</option>
+            </select>
+          </div>
+          <!-- Status -->
+          <div class="form-group">
+            <label for="form-check-label" for="inlineRadio1">Status : </label>
+            <label class="form-check-label" for="inlineRadio1" *ngFor="let tempStatus of statusList; let i = index">
+              <input class="form-check-input" type="radio" value="option1" id="tempStatus{{ i }}" [value]="tempStatus"
+                formControlName="status" />
+              {{ tempStatus }}
+            </label>
+            <!-- <input type="text" formControlName="status" class="form-control" id="exampleInputPassword1"
+              placeholder="Enter Status"> -->
+          </div>
+          <!-- Description -->
+          <div class="form-group">
+            <label for="exampleInputPassword1">Descriprion</label>
+            <input type="text" formControlName="description" class="form-control" id="exampleInputPassword1"
+              placeholder="Enter description">
+          </div>
         </form>
       </div>
+      <!-- Add and Update button for Add and Edit Issues popup -->
       <div class="modal-footer">
         <button type="button" id="cancel" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" *ngIf="showAdd()" (click)="postIssueDetails()">Add</button>
-        <button type="button" class="btn btn-primary" *ngIf="showUpdate()" (click)="updateIssueDetails()">Update</button>
+        <button type="button" class="btn btn-info" *ngIf="showAdd" (click)="postIssueDetails()">Add</button>
+        <button type="button" class="btn btn-info" *ngIf="showUpdate" (click)="updateIssueDetails()">Update</button>
       </div>
     </div>
   </div>
 </div>
-

@@ -1,0 +1,32 @@
+table{
+    overflow-y: auto;
+}
+
+.form-group{
+    padding-bottom: 1rem;
+}
+
+.content-wrapper{
+    overflow-y: auto;
+}
+
+.modal-footer{
+    padding: 0.50rem;
+    background-color: #000;
+}
+
+.btn-add{
+    background-color: rgb(125, 228, 125);
+}
+
+.btn-info{
+    color: white;
+    background-color: #000;
+    border-color: #000;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+}
